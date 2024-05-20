@@ -10,12 +10,22 @@ const Quote = ({ quote, likeQuote, shareQuote }) => {
         const element = quoteCardRef.current;
         const canvas = await html2canvas(element);
         const image = canvas.toDataURL('image/png');
+        const link = document.createElement('a');
+        link.href = image;
+        link.download = 'quote.png';
+        link.click();
 
-        // Construct the Instagram sharing URL
-        const instagramUrl = `https://www.instagram.com/stories/iamnestally/?url=${encodeURIComponent(image)}`;
-
-        // Open the Instagram sharing URL
-        window.open(instagramUrl, '_blank');
+        // If you want to directly share on social media, you would use the respective APIs or libraries
+        // For example, using the Web Share API:
+        if (navigator.share) {
+            navigator.share({
+                title: 'Quote',
+                text: 'Check out this quote',
+                files: [new File([image], 'quote.png', { type: 'image/png' })],
+            }).catch(console.error);
+        } else {
+            console.log('Share not supported');
+        }
     };
 
     return (
