@@ -29,8 +29,8 @@ const Quote = ({ quote, likeQuote, shareQuote }) => {
     };
 
     return (
-        <div className="quote-card" ref={quoteCardRef}>
-            <div className="quote-content">
+        <div className="quote-card">
+            <div className="quote-content" ref={quoteCardRef}>
                 <p>"{quote.text}"</p>
                 <p><em>- {quote.author}</em></p>
             </div>
