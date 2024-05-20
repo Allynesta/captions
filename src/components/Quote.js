@@ -10,21 +10,18 @@ const Quote = ({ quote, likeQuote, shareQuote }) => {
         const element = quoteCardRef.current;
         const canvas = await html2canvas(element);
         const image = canvas.toDataURL('image/png');
-        const link = document.createElement('a');
-        link.href = image;
-        link.download = 'quote.png';
-        link.click();
 
-        // If you want to directly share on social media, you would use the respective APIs or libraries
-        // For example, using the Web Share API:
         if (navigator.share) {
+            const file = new File([image], 'quote.png', { type: 'image/png' });
             navigator.share({
+                files: [file],
                 title: 'Quote',
                 text: 'Check out this quote',
-                files: [new File([image], 'quote.png', { type: 'image/png' })],
-            }).catch(console.error);
+            })
+                .then(() => console.log('Shared successfully'))
+                .catch((error) => console.error('Error sharing:', error));
         } else {
-            console.log('Share not supported');
+            console.log('Web Share API not supported');
         }
     };
 
