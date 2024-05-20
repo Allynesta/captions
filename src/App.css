@@ -21,24 +21,23 @@ nav ul li {
   margin: 0 10px;
 }
 
-.quote {
-  margin: 20px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background: #f9f9f9;
-}
-
 .quote-card {
-  margin: 20px;
+  margin: 20px auto;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 10px;
   background: #f9f9f9;
+  width: 300px; /* Adjust width as needed */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .quote-content {
   margin-bottom: 20px;
+}
+
+.quote-actions {
+  display: flex;
+  justify-content: center;
 }
 
 .quote-actions button {
@@ -47,6 +46,29 @@ nav ul li {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+}
+
+.quote-actions button:hover {
+  background-color: #45a049;
+}
+
+.generate-button {
+  margin: 20px 0;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #008CBA;
+  color: white;
+  font-size: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.generate-button:hover {
+  background-color: #007bb5;
 }
 
 .quote-creator form {

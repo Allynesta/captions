@@ -51,7 +51,7 @@ const QuoteGenerator = () => {
                 <p>Loading...</p>
             )}
             {error && <p>{error}</p>}
-            <button onClick={fetchQuote}>Generate New Quote</button>
+            <button className="generate-button" onClick={fetchQuote}>Generate New Quote</button>
         </div>
     );
 };
