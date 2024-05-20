@@ -4,10 +4,10 @@ import React, { useRef } from 'react';
 import html2canvas from 'html2canvas';
 
 const Quote = ({ quote, likeQuote, shareQuote }) => {
-    const quoteContentRef = useRef(null);
+    const quoteCardRef = useRef(null);
 
     const shareAsImage = async () => {
-        const element = quoteContentRef.current;
+        const element = quoteCardRef.current;
         const canvas = await html2canvas(element);
         const image = canvas.toDataURL('image/png');
         const link = document.createElement('a');
@@ -29,8 +29,8 @@ const Quote = ({ quote, likeQuote, shareQuote }) => {
     };
 
     return (
-        <div className="quote-card">
-            <div className="quote-content" ref={quoteContentRef}>
+        <div className="quote-card" ref={quoteCardRef}>
+            <div className="quote-content">
                 <p>"{quote.text}"</p>
                 <p><em>- {quote.author}</em></p>
             </div>

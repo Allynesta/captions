@@ -46,12 +46,11 @@ nav ul li {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  color: default;
   font-size: 16px;
 }
 
 .quote-actions button:hover {
-  background-color: #45a049;
+  background-color: #ddd; /* Hover color for quote actions buttons */
 }
 
 .generate-button {
@@ -60,13 +59,12 @@ nav ul li {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  color: dafault;
   font-size: 16px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .generate-button:hover {
-  background-color: #007bb5;
+  background-color: #ddd; /* Hover color for generate button */
 }
 
 .quote-creator form {
