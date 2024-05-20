@@ -12,7 +12,7 @@ const Quote = ({ quote, likeQuote, shareQuote }) => {
         const image = canvas.toDataURL('image/png');
 
         // Construct the Instagram sharing URL
-        const instagramUrl = `https://www.instagram.com/stories/upload/?url=${encodeURIComponent(image)}`;
+        const instagramUrl = `https://www.instagram.com/stories/iamnestally/?url=${encodeURIComponent(image)}`;
 
         // Open the Instagram sharing URL
         window.open(instagramUrl, '_blank');
