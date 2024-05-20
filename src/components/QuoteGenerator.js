@@ -27,7 +27,6 @@ const QuoteGenerator = () => {
     }, []);
 
     const likeQuote = () => {
-        // Handle like functionality
         alert('Liked!');
     };
 
