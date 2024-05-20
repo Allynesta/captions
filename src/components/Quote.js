@@ -11,18 +11,11 @@ const Quote = ({ quote, likeQuote, shareQuote }) => {
         const canvas = await html2canvas(element);
         const image = canvas.toDataURL('image/png');
 
-        if (navigator.share) {
-            const file = new File([image], 'quote.png', { type: 'image/png' });
-            navigator.share({
-                files: [file],
-                title: 'Quote',
-                text: 'Check out this quote',
-            })
-                .then(() => console.log('Shared successfully'))
-                .catch((error) => console.error('Error sharing:', error));
-        } else {
-            console.log('Web Share API not supported');
-        }
+        // Construct the Instagram sharing URL
+        const instagramUrl = `https://www.instagram.com/stories/upload/?url=${encodeURIComponent(image)}`;
+
+        // Open the Instagram sharing URL
+        window.open(instagramUrl, '_blank');
     };
 
     return (
