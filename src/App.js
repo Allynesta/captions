@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import CreateQuotePage from './pages/CreateQuotePage';
 import './App.css';
+import { Analytics } from '@vercel/analytics/react';
+
 
 function App() {
   return (
@@ -23,6 +25,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/create-quote" element={<CreateQuotePage />} />
+          <Analytics />
         </Routes>
       </div>
     </Router>
