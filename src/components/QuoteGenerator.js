@@ -10,15 +10,21 @@ const QuoteGenerator = () => {
 
     const fetchQuote = async () => {
         try {
-            const response = await axios.get('https://api.quotable.io/random');
+            const response = await axios.get('https://api.api-ninjas.com/v1/quotes', {
+                headers: {
+                    'X-Api-Key': 'eHlJJqpatC/Yu8+a0fmIXQ==GFjaPTsVoZXwnLL9', // Replace with your actual API key
+                },
+            });
+
+            const quote = response.data[0]; // API Ninja returns an array of quotes
             setQuote({
-                text: response.data.content,
-                author: response.data.author,
+                text: quote.quote,
+                author: quote.author,
             });
             setError(null);
         } catch (err) {
             setError('Failed to fetch quote');
-            console.error(err);
+            console.error('Error Details:', err.message, err.response, err.request);
         }
     };
 
