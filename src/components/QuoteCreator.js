@@ -13,8 +13,17 @@ const QuoteCreator = () => {
 
     const fetchAndModifyQuote = async () => {
         try {
-            const response = await axios.get('https://api.quotable.io/random');
-            const fetchedQuote = response.data.content;
+            // Fetch a quote from the API Ninjas endpoint
+            const response = await axios.get('https://api.api-ninjas.com/v1/quotes', {
+                headers: {
+                    'X-Api-Key': 'eHlJJqpatC/Yu8+a0fmIXQ==GFjaPTsVoZXwnLL9', // Replace with your actual API key
+                },
+            });
+
+            // Extract the first quote from the response
+            const fetchedQuote = response.data[0].quote;
+
+            // Modify the quote by replacing the first few words
             const modifiedQuote = fetchedQuote.replace(/\b\w+\b/g, (match, index) => {
                 switch (index) {
                     case 0:
@@ -27,11 +36,14 @@ const QuoteCreator = () => {
                         return match;
                 }
             });
+
+            // Set the modified quote with the name appended
             setQuote(`${modifiedQuote} - ${name}`);
             setError('');
         } catch (err) {
+            // Handle errors
             setError('Failed to fetch quote');
-            console.error(err);
+            console.error('Error Details:', err.message, err.response, err.request);
         }
     };
 
