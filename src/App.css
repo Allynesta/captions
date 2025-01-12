@@ -1,126 +1,178 @@
 /* src/App.css */
 
+:root {
+  --primary-color: #36771e; /* Primary theme color */
+  --secondary-color: #282c34; /* Secondary color for header */
+  --text-color-light: #ffffff;
+  --text-color-dark: #333333;
+  --background-light: #f9f9f9;
+  --background-highlight: #e0f7fa;
+  --button-hover: #f0f0f0;
+}
+
 .App {
+  font-family: 'Arial', sans-serif;
   text-align: center;
-  margin: 20px;
+  margin: 0;
+  padding: 20px;
+  color: var(--text-color-dark);
+  background-color: var(--background-light);
+  min-height: 100vh;
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: var(--secondary-color);
+  color: var(--text-color-light);
   padding: 20px;
-  color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
 }
 
 nav ul {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
-nav ul li {
-  display: inline;
-  margin: 0 10px;
+nav ul li a {
+  text-decoration: none;
+  padding: 10px 15px;
+  color: var(--text-color-light);
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: var(--button-hover);
+  color: var(--text-color-dark);
 }
 
 .quote-card {
   margin: 20px auto;
   padding: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   border-radius: 10px;
-  background: #f9f9f9;
-  width: 300px; /* Adjust width as needed */
+  background-color: var(--background-light);
+  width: 90%;
+  max-width: 400px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quote-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .quote-content {
-  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  line-height: 1.5;
+  color: var(--text-color-dark);
+}
+
+.quote-author {
+  font-size: 14px;
+  color: #555;
 }
 
 .quote-actions {
   display: flex;
   justify-content: center;
+  gap: 10px;
 }
 
 .quote-actions button {
-  margin: 5px;
-  padding: 10px 20px;
+  padding: 10px 15px;
   border: none;
   border-radius: 5px;
+  background-color: var(--primary-color);
+  color: var(--text-color-light);
+  font-size: 14px;
   cursor: pointer;
-  font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
 .quote-actions button:hover {
-  background-color: #ddd; /* Hover color for quote actions buttons */
+  background-color: var(--button-hover);
+  color: var(--text-color-dark);
 }
 
 .generate-button {
-  margin: 20px 0;
-  padding: 10px 20px;
+  padding: 12px 20px;
   border: none;
   border-radius: 5px;
-  cursor: pointer;
+  background-color: var(--primary-color);
+  color: var(--text-color-light);
   font-size: 16px;
+  cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .generate-button:hover {
-  background-color: #ddd; /* Hover color for generate button */
+  background-color: var(--button-hover);
+  color: var(--text-color-dark);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .quote-creator form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 15px;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 400px;
 }
 
 .quote-creator input {
-  margin: 5px;
+  width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   border-radius: 5px;
+  font-size: 14px;
 }
 
 .quote-creator button {
-  margin: 10px;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
+  background-color: var(--primary-color);
+  color: var(--text-color-light);
+  font-size: 16px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background-color: #ddd;
+.quote-creator button:hover {
+  background-color: var(--button-hover);
+  color: var(--text-color-dark);
 }
 
 .generated-quote {
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: var(--background-highlight);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--text-color-dark);
+  width: 90%;
+  max-width: 400px;
+}
+
+
+.homepagebreak {
   margin: 20px;
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background: #e0f7fa;
-}
-
-
-/* Navigation styles */
-nav {
-  padding: 10px 0; /* Add padding to the top and bottom */
-}
-
-nav ul {
-  list-style-type: none; /* Remove bullet points */
-  padding: 0; /* Remove default padding */
-  margin: 0; /* Remove default margin */
-}
-
-nav ul li {
-  display: inline; /* Display list items horizontally */
-}
-
-nav ul li a {
-  text-decoration: none; /* Remove underline from links */
-  padding: 10px 20px; /* Add padding to each link */
-}
-
-nav ul li a:hover {
-  background-color: #909090ec; /* Background color on hover */
 }

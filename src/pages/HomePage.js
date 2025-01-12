@@ -5,7 +5,7 @@ import QuoteGenerator from '../components/QuoteGenerator';
 
 const HomePage = () => {
     return (
-        <div>
+        <div className='homepagebreak'>
             <h1>Random Quote Generator</h1>
             <QuoteGenerator />
         </div>
