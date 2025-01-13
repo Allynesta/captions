@@ -5,7 +5,7 @@ import QuoteCreator from '../components/QuoteCreator';
 
 const CreateQuotePage = () => {
     return (
-        <div>
+        <div className="homepagebreak">
             <QuoteCreator />
         </div>
     );
